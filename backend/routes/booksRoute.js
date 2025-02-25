@@ -24,7 +24,7 @@ router.post('/', async (req, res) => {
 
     return res.status(201).send(book);
     }catch(error){
-        console.log(error.message)
+        // console.log(error.message)
         res.status(500).send({message: error.message});
     }
 })
@@ -38,7 +38,7 @@ router.get('/', async (req, res) => {
             data: books
         });
     } catch (error) {
-        console.log(error.message);
+        // console.log(error.message);
         res.status(500).send({message: error.message});
     }
 })
@@ -52,7 +52,7 @@ router.get('/:id', async (req, res) => {
             data: books
         });
     } catch (error) {
-        console.log(error.message);
+        // console.log(error.message);
         res.status(500).send({message: error.message});
     }
 })
@@ -77,7 +77,7 @@ router.put('/:id', async (req, res) => {
         return res.status(200).send({message: 'Book updated successfully'});
     }
     catch(error) {
-        console.log(error.message);
+        // console.log(error.message);
         res.status(500).send({message: error.message})
     }
 })
@@ -92,7 +92,7 @@ router.delete('/:id', async (req, res) => {
         return res.status(200).send({message: 'Book deleted successfully'}); 
         
     } catch (error) {
-        console.log(error.message);
+        // console.log(error.message);
         res.status(500).send({message: error.message});
     }
 })

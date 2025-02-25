@@ -21,8 +21,8 @@ const CreateBook = () => {
       publishYear
     }
     setLoading(true);
-    axios
-      .post(`http://localhost:5555/books`, data)
+    api
+    .post(`/books`, data)
       .then(() => {
         setLoading(false);
         enqueueSnackbar('Book Created successfully', {variant: 'success'});
@@ -32,7 +32,7 @@ const CreateBook = () => {
         setLoading(false)
         // alert('An error happened. Please Check console')
         enqueueSnackbar('Error', {variant: 'error'})
-        console.log(error)
+        // console.log(error)
       })
   }
 

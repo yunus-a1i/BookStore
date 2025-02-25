@@ -17,7 +17,9 @@ const EditBook = () => {
 
   useEffect(() => {
     setLoading(true);
-    axios.get(`http://localhost:5555/books/${id}`)
+    axios
+    api
+    .get(`/books/${id}`)
     .then((response) => {
       setAuthor(response.data.data.author);
       setPublishYear(response.data.data.publishYear)
@@ -27,7 +29,7 @@ const EditBook = () => {
     .catch((error) => {
       setLoading(false);
       alert('An error happened. Please Check console');
-      console.log(error);
+      // console.log(error);
     })
   }, [id])
   const handleEditBook = () => {
@@ -37,8 +39,8 @@ const EditBook = () => {
       publishYear
     }
     setLoading(true);
-    axios
-      .put(`http://localhost:5555/books/${id}`, data)
+      api
+      .put(`/books/${id}`, data)
       .then(() => {
         setLoading(false);
         enqueueSnackbar('Book Edited successfully', {variant: 'success'});
@@ -47,7 +49,7 @@ const EditBook = () => {
       .catch((error) => {
         setLoading(false)
         enqueueSnackbar('Error', {variant: 'error'})
-        console.log(error)
+        // console.log(error)
       })
   }
 

@@ -12,14 +12,15 @@ const ShowBook = () => {
 
     useEffect(() => {
         setLoading(true);
-        axios
-        .get(`http://localhost:5555/books/${id}`)
+        api
+        .get(`/books/${id}`)
         .then((response) => {
+            // console.log(response)
             setBook(response.data.data);
             setLoading(false);
         })
         .catch((error) => {
-            console.log(error);
+            // console.log(error);
             setLoading(false);
         });
     },[id])

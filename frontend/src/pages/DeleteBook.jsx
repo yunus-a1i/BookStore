@@ -14,8 +14,8 @@ const DeleteBook = () => {
 
   const handleDeletedBook = () => {
     setLoading(true);
-    axios
-      .delete(`http://localhost:5555/books/${id}`)
+      api
+      .delete(`/books/${id}`)
       .then(() => {
         setLoading(false);
         enqueueSnackbar('Book Deleted Successfully', {variant: 'success'})
@@ -24,7 +24,7 @@ const DeleteBook = () => {
       .catch((error) => {
         setLoading(false);
         enqueueSnackbar('Error', {variant: 'error'})
-        console.log(error);
+        // console.log(error);
       })
   }
   return (
