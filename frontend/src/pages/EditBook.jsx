@@ -4,6 +4,7 @@ import Spinners from '../components/Spinners'
 import axios from 'axios'
 import { useNavigate, useParams } from 'react-router-dom'
 import { useSnackbar } from 'notistack'
+import api from '../utils/axios'
 
 
 const EditBook = () => {
