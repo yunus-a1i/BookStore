@@ -23,14 +23,14 @@ app.use(cors());
 // )
 
 app.get('/', (req, res) => {
-    console.log(req);
+    // console.log(req);
     res.status(200).send('Home page')
 })
 
 app.use('/books', booksRoute);
 
 app.listen(PORT, (req, res) => {
-    console.log(`App is running on port ${PORT}`)
+    // console.log(`App is running on port ${PORT}`)
 })
 
 // 9eY2sfM9B61AvM8r
@@ -38,9 +38,9 @@ app.listen(PORT, (req, res) => {
 mongoose
 .connect(mongoDBURL)
 .then(()=>{
-    console.log('App connected to database');
+    // console.log('App connected to database');
 })
 .catch((error) => {
-    console.log(error);
+    // console.log(error);
 });
 
